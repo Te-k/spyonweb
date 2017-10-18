@@ -55,7 +55,7 @@ def main():
                     print(cf.read())
             else:
                 print('No configuration file, please create one with config --token')
-        else:
+        elif args.which=='domain':
             if not os.path.isfile(configfile):
                 print('No configuration file, please create one with config --token')
                 sys.exit(1)
@@ -76,15 +76,18 @@ def main():
                     print('IP:')
                     for i in res['ip']:
                         print('-%s: %i entries' % (i, res['ip'][i]))
-                    print('AdSense:')
-                    for i in res['adsense']:
-                        print('-%s: %i entries' % (i, res['adsense'][i]))
-                    print('Analytics:')
-                    for i in res['analytics']:
-                        print('-%s: %i entries' % (i, res['analytics'][i]))
-                    print('DNS Servers:')
-                    for i in res['dns_servers']:
-                        print('-%s: %i entries' % (i, res['dns_servers'][i]))
+                    if 'adsense' in res:
+                        print('AdSense:')
+                        for i in res['adsense']:
+                            print('-%s: %i entries' % (i, res['adsense'][i]))
+                    if 'analytics' in res:
+                        print('Analytics:')
+                        for i in res['analytics']:
+                            print('-%s: %i entries' % (i, res['analytics'][i]))
+                    if 'dns_servers' in res:
+                        print('DNS Servers:')
+                        for i in res['dns_servers']:
+                            print('-%s: %i entries' % (i, res['dns_servers'][i]))
             elif args.which == 'adsense':
                 try:
                     res = s.adsense(args.ID)
