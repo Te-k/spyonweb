@@ -1,1 +1,1 @@
-from .api import SpyOnWeb
+from .api import SpyOnWeb, SpyOnWebNotFound, SpyOnWebInvalidToken, SpyOnWebError
