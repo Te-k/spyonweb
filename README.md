@@ -2,6 +2,17 @@
 
 Python3 wrapper and CLI for the SpyOnWeb.com API
 
+## Install
+
+Install the [PyPi package](https://pypi.org/project/spyonweb/) : `pip install spyonweb`
+
+You can also install it manually :
+```
+git clone https://github.com/Te-k/spyonweb.git
+cd spyonweb
+pip install .
+```
+
 ## CLI
 
 ```
@@ -25,11 +36,11 @@ Fetched 10 domains over 10
 -hernia-symptoms.com (2014-03-20)
 ```
 
-## Library
+## API
 
 ```python
 from spyonweb import SpyOnWeb
-client = SpyOnWeb('2wldRA5t5xL9')
+client = SpyOnWeb(API_KEY)
 client.analytics('UA-34505845')
 
 {'fetched': 9,
